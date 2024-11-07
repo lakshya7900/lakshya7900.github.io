@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LADev</title>
+</head>
+
+<!-- <svg style="display: none;">
+    <filter id="noise">
+        <feTurbulence
+          baseFrequency="0.7,0.8"
+          seed="0"
+          type="fractalNoise"
+          result="static"
+        >
+        <animate
+          attributeName="seed"
+          values="0;100"
+          dur="800ms"
+          repeatCount="1" 
+          begin="games_item.mouseenter"                           
+        />
+      </feTurbulence>
+
+      <feDisplacementMap in="SourceGraphic" in2="static">
+        <animate
+          attributeName="scale"
+          values="0;40;0"
+          dur="800ms"
+          repeatCount="1" 
+          begin="games_item.mouseenter"                           
+        />
+      </feDisplacementMap>
+    </filter>
+</svg> -->
+
+<header>
+    <nav class="navbar">
+        <a class="logo" href="index.html"><img src="Assests/Logo.png" alt="Logo" width="120vw"></a>
+        <a href="#" class="toggle_button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar_links">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="games.html">GAMES</a></li>
+                <li><a href="3D_renders.html">3D RENDERS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="games">
+        <p>This is a list of games made by me!<br>
+        </p>
+
+        <div class="games_list">
+            <li>
+                <a class="dodge_till_infinity" id="games_item" href="https://ladev.itch.io/dodge-till-infinity">
+                    <img src="Assests/Dodge Till Infinity.png" alt="Dodge Till Inifinity">
+                    <span>Dodge Till Infinity</span>
+                </a>
+            </li>
+
+            <!-- <li>
+                <a class="dodge_till_infinity" id="games_item">
+                    <img src="Assests/Dodge Till Infinity.png" alt="Dodge Till Inifinity">
+                    <span>Dodge Till Infinity</span>
+                </a>
+            </li> -->
+        </div>
+    </div>
+</body>
+
+<script src="navbar.js"></script>
+
+</html>
