@@ -430,6 +430,12 @@ section{
 
 
 
+@media (max-width: 1000px){  
+    .renders-container{
+        grid-template-columns: repeat(2, 200px);
+    }
+}
+
 @media (max-width: 900px) {
     .intro{
         font-size: 5vw;
@@ -445,6 +451,13 @@ section{
 
     .games_list img{
         width: 30vw;
+    }
+}
+
+@media (max-width: 600px) {
+   .renders-container{
+        display: flex;
+        flex-direction: column;
     }
 }
 
