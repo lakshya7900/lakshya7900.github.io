@@ -9,6 +9,15 @@
 </head>
 
 <header>
+    <div id="loader_container">
+        <div class="newtons_cradle">
+            <div class="newtons_cradle_dot"></div>
+            <div class="newtons_cradle_dot"></div>
+            <div class="newtons_cradle_dot"></div>
+            <div class="newtons_cradle_dot"></div>
+        </div>
+    </div>
+    
     <nav class="navbar">
         <a class="logo" href="index.html"><img src="Assests/Logo.png" alt="Logo" width="120vw"></a>
         <a href="#" class="toggle_button">
@@ -90,6 +99,13 @@
         </div>
     </div>
 </body>
+
+<script>
+    window.addEventListener("load", function() {
+        document.getElementById("loader_container").style.display = "none";
+        document.body.style.overflowY = "scroll"
+    });
+</script>
 
 <script src="navbar.js"></script>
 
