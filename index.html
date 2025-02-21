@@ -1,75 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshya Agarwal</title>
     <link rel="stylesheet" href="style.css">
-    <title>LADev</title>
 </head>
 
-<header>
-    <div id="loader_container">
-        <div class="newtons_cradle">
-            <div class="newtons_cradle_dot"></div>
-            <div class="newtons_cradle_dot"></div>
-            <div class="newtons_cradle_dot"></div>
-            <div class="newtons_cradle_dot"></div>
-        </div>
-    </div>
-    
-
-    <nav class="navbar">
-        <a class="logo" href="#"><img src="Assests/Logo.png" alt="Logo" width="120vw"></a>
-        <a href="#" class="toggle_button">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </a>
-        <div class="navbar_links">
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="games.html">GAMES</a></li>
-                <li><a href="3D_renders.html">3D RENDERS</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
 <body>
+    <div class="blob"></div>
 
-    <div class="intro">
-        <section>
-            <p>I am a<br>
-                <b>Student/Gamedev</b>
-            </p>
-            <a class="mybtn" href="#middle">LEARN MORE.</a>
-        </section>
+    <div class="navbar bold_text">
+    </div>
 
-        <section class="aboutme" id="middle">
-            <p>Hi!<br>
-                My name is Lakshya, I'm a 17 year old computer enthusiast.
-                I'm currently an undergraduate student majoring in
-                Computer Science at Virginia Tech, Blacksburg, Virginia,
-                and am practicing 3D modelling and programming.
-            </p>
+    <div class="main" id="main">
+        <div class="main_left_side">
+                <h1 class="bold_text">Lakshya Agarwal</h1>
+                <h2 class="bold_text">Software Engineer</h2>
+                <p>I build innovative, user-focused digital solutions that bridge technology and education.</p>
 
-            <div class="aboutme_links">
-                <li><a class="mybtn" href="games.html">GAMES</a></li>
-                <li><a class="mybtn" href="contact.html">CONTACT</a></li>
-                <li><a class="mybtn" href="3D_renders.html">3D RENDERS</a></li>
+                <ul class="section_links">
+                    <li><a href="#about" class="section_link">
+                        <div class="section_link_line"></div>
+                        <div>ABOUT</div>
+                    </a></li>
+
+                    <li><a href="#experience" class="section_link">
+                        <div class="section_link_line"></div>
+                        <div>EXPERIENCE</div>
+                    </a></li>
+
+                    <li><a href="#projects" class="section_link">
+                        <div class="section_link_line"></div>
+                        <div>PROJECTS</div>
+                    </a></li>
+
+                    <li><a href="#games" class="section_link">
+                        <div class="section_link_line"></div>
+                        <div>GAMES</div>
+                    </a></li>
+                </ul>
+
+                <ul class="contact_links">
+                    <li><a href="https://www.linkedin.com/in/lakshya7900/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                    <li><a href="https://github.com/lakshya7900" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="https://www.instagram.com/ladev.official/" target="_blank"><i class="fa-brands fa-instagram fa-icons"></i></a></li>
+                    <li><a href="https://www.facebook.com/la.dev.73" target="_blank"><i class="fa-brands fa-facebook fa-icons"></i></a></li>
+                    <li><a href="https://discord.gg/aqntacqw" target="_blank"><i class="fa-brands fa-discord fa-icons"></i></a></li>
+                    <li><a href="mailto: aglakshya06@gmail.com" target="_blank"><i class="fa-regular fa-envelope fa-icons"></i></a></li>
+                </ul>
+        </div>
+
+        <section class="main_right_side">
+            <div class="about_me right_side_container" id="about">
+                <h2 class="header bold_text">About</h2>
+
+                <p>
+                    I'm Lakshya Agarwal, a developer passionate about crafting impactful, 
+                    user-centric solutions that fuse creative problem-solving with cutting-edge 
+                    technology. Currently, I'm a <span class="bold_text">Computer Science student at 
+                    Virginia Polytechnic Institute and State University</span>, and I'm channeling my 
+                    skills into co-founding <span class="bold_text">EduBank.AI.</span> As the Lead Programmer.
+                    <br>
+                    <br>
+                    In the past, I've tackled diverse challenges as a co-founder and Lead Programmer at 
+                    <span class="bold_text">ModelVision</span>, where I engineered an augmented reality app 
+                    to enhance classroom education by turning static images into interactive 3D models. This 
+                    experience taught me the value of collaboration and the power of technology to reshape 
+                    traditional systems. Beyond my entrepreneurial ventures, I've built a range of projects—from 
+                    <span class="bold_text">voice-activated assistants</span> to <span class="bold_text">AI-trained 
+                    games</span>—using tools like <span class="bold_text">Python, Swift, and Unity.</span> 
+                    Each project reflects my commitment to blending technical expertise with a user-first mindset.
+                    <br>
+                    <br>
+                    In my spare time, I'm usually experimenting with new coding projects, exploring game development softwares
+                    like godot maybe, or diving into the latest tech trends. You might also find me sketching out ideas for my 
+                    next app, unwinding with a good book, or dodging obstacles in a virtual world of my own creation—always 
+                    chasing the next big idea.
+                </p>
+            </div>
+
+            <div class="experiences right_side_container" id="experience">
+                <h2 class="header bold_text">Experience</h2>
+
+                <div class="experience_container">
+                    <a href="http://vt.startuptree.co/company/modelvision" target="_blank">
+                        <div class="time_span">2024 - PRESENT</div>
+    
+                        <div class="about_experience">
+                            <div class="experience_name bold_text">Co-Founder, Lead Programer - ModelVision</div>
+    
+                            <div class="experience_description"><p>
+                                ModelVision delivers an app that transforms static textbook images into 
+                                interactive 3D augmented reality (AR) models, enhancing educational engagement. 
+                                Designed to integrate seamlessly into classroom environments, it captures 
+                                images via a mobile device and renders detailed AR visualizations in real-time. 
+                                The project bridges the gap between traditional learning materials and modern 
+                                technology, offering students a dynamic, hands-on way to explore complex concepts.
+                            </p></div>
+    
+                            <div class="experience_languages">
+                                <h3 class="languages">Python</h3>
+                                <h3 class="languages">C#</h3>
+                                <h3 class="languages">Unity</h3>
+                                <h3 class="languages">Gemini</h3>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/EduBank-AI" target="_blank">
+                        <div class="time_span">2025 - PRESENT</div>
+    
+                        <div class="about_experience">
+                            <div class="experience_name bold_text">Co-Founder, Lead Programer - EduBank.Ai</div>
+    
+                            <div class="experience_description"><p>
+                                EduBank.AI is a platform that converts teachers' lecture notes—whether PDFs, 
+                                videos, or images—into AI-driven, interactive learning resources. It processes 
+                                uploaded content to generate features like automated question sets, unique example 
+                                variations, and lecture assistance, all tailored to the provided materials. The 
+                                system aims to maximize resource usability for educators, creating an efficient 
+                                and engaging experience for both teaching and learning.
+                            </p></div>
+    
+                            <div class="experience_languages">
+                                <h3 class="languages">GO</h3>
+                                <h3 class="languages">Rust</h3>
+                                <h3 class="languages">Gemini</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="projects right_side_container" id="projects">
+                <h2 class="header bold_text">Projects</h2>
+
+                <div class="projects_container">
+                    <a href="https://github.com/lakshya7900/Virtual-Assistant" target="_blank">    
+                        <div class="projects_name bold_text">Personal Virtual Assistant</div>
+
+                        <div class="projects_description"><p>
+                            A voice-activated desktop assistant capable of executing commands 
+                            such as opening applications and sending messages.
+                        </p></div>
+
+                        <div class="projects_languages">
+                            <h3 class="languages">Python</h3>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/lakshya7900/Motion-Detection" target="_blank">    
+                        <div class="projects_name bold_text">Motion Detection</div>
+
+                        <div class="projects_description"><p>
+                            A security application using a camera to detect movement 
+                            and trigger an alarm upon motion detection.
+                        </p></div>
+
+                        <div class="projects_languages">
+                            <h3 class="languages">Python</h3>
+                            <h3 class="languages">OpenCV</h3>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/lakshya7900/Hand-Gesture-Recognition" target="_blank">    
+                        <div class="projects_name bold_text">Hand Gesture Recognition</div>
+
+                        <div class="projects_description"><p>
+                            A system that recognizes hand gestures (e.g., thumbs up, OK sign) 
+                            and provides real-time feedback.
+                        </p></div>
+
+                        <div class="projects_languages">
+                            <h3 class="languages">Python</h3>
+                            <h3 class="languages">OpenCV</h3>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/lakshya7900/Wordle-Clone" target="_blank">    
+                        <div class="projects_name bold_text">Wordle Clone</div>
+
+                        <div class="projects_description"><p>
+                            An iOS-based Wordle clone featuring daily challenges, real-time feedback, 
+                            progress tracking, and dark mode support.
+                        </p></div>
+
+                        <div class="projects_languages">
+                            <h3 class="languages">Swift</h3>
+                            <h3 class="languages">SwiftUI</h3>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/lakshya7900/AI-vs-Human-Flappy-Bird" target="_blank">    
+                        <div class="projects_name bold_text">AI vs Human Flappy Bird</div>
+
+                        <div class="projects_description"><p>
+                            A Flappy Bird clone with AI training via neat-python, 
+                            offering real-time Human vs. AI gameplay, score tracking, 
+                            and dynamic difficulty using PyGame.
+                        </p></div>
+
+                        <div class="projects_languages">
+                            <h3 class="languages">Python</h3>
+                            <h3 class="languages">PyGame</h3>
+                            <h3 class="languages">Neat</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="games right_side_container" id="games">
+                <h2 class="header bold_text">Games</h2>
+
+                <div class="games_container">
+                    <a href="https://ladev.itch.io/dodge-till-infinity" target="_blank">
+                        <div class="games_logo"><img src="Assets/Dodge Till Infinity Square.png" alt="Dodge Till Infinity Logo"></div>
+    
+                        <div class="about_games">
+                            <div class="games_name bold_text">Dodge Till Infinity</div>
+
+                            <div class="games_description"><p>
+                                Dodge Till Infinity immerses players in a fast-paced 2D world where the goal is 
+                                to avoid an endless onslaught of blocks and survive as long as possible. The game offers
+                                a simple yet addictive premise: evade, 
+                                endure, and don't die.
+                            </p></div>
+
+                            <div class="games_languages">
+                                <h3 class="languages">C#</h3>
+                                <h3 class="languages">Unity</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
     </div>
+
+    <script src="Javascripts/navbar.js"></script>
+    <script src="Javascripts/sectionLinks.js"></script>
+    <script src="https://kit.fontawesome.com/5b1f48684e.js" crossorigin="anonymous"></script>
+    <script src="Javascripts/mousefollow.js"></script>
 </body>
-
-<script>
-    window.addEventListener("load", function() {
-        document.getElementById("loader_container").style.display = "none";
-        document.body.style.overflowY = "scroll"
-    });
-</script>
-
-<script src="navbar.js"></script>
 
 </html>
