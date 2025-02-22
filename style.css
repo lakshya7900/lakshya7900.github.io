@@ -4,7 +4,7 @@
     --bg-color: #0f172a;
     --bold-font-color: #e2e8f0df;
     --normal-font-color: #828d9fdf;
-    --highlited-bg-color: #54d3d4;
+    --highlited-bg-color: #9654d4;
     --highlited-bold-font-color: #341560df;
     --highlited-normal-font-color: #ffffffdf;
     --external-link-font-color: #8254d2;
@@ -93,6 +93,7 @@ p {
     z-index: -1;
     transition: all 0.1s ease-out;
     will-change: left, top;
+    opacity: 0.7;
 }
 
 
@@ -101,7 +102,7 @@ p {
     display: flex;
     flex-direction: row;
     margin: 5rem auto;
-    width: 88%;
+    width: 93%;
 }
 
 .main_left_side {
@@ -163,6 +164,25 @@ p {
     background-color: var(--bold-font-color);
 }
 
+.arrow_icon {
+    overflow: visible;
+    margin-left: 3px;
+    width: 8px;
+    justify-content: center;
+    align-items: center;
+}
+  
+.arrow_head {
+    transform: translateX(0);
+    transition: transform 100ms ease-in-out;
+}
+  
+.arrow_body {
+    opacity: 0;
+    transform: scaleX(1);
+    transition: transform 100ms ease-in-out;
+}
+
 
 /**Contact Links*/
 .contact_links {
@@ -190,23 +210,37 @@ p {
 
 
 /**Experience*/
+.experiences {
+    padding: 1.4rem;
+    padding-left: 0.8rem;
+}
+
 .experience_container a{
     display: flex;
     flex-direction: row;
-    gap: 6rem;
-    padding: 30px 20px;
+    padding: 20px 15px;
     border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-    margin-bottom: 1rem;
+    transition: all 0.5s ease-in-out;
 }
 
 .experience_container a:hover {
     background-color: var(--external-link-bg-color);
     backdrop-filter: blur(30px);
+    opacity: 1;
+    box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.3);
 }
 
 .experience_container a:hover .experience_name {
     color: var(--external-link-font-color);
+}
+
+.experience_container a:hover .arrow_head {
+    transform: translateX(7px);
+}
+
+.experience_container a:hover .arrow_body {
+    opacity: 1;
+    transform: scaleX(3);
 }
 
 .time_span {
@@ -214,17 +248,19 @@ p {
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-    font-size: 0.9rem;
-    padding: 0;
-    margin: 0;
-    flex-shrink: 0; 
+    font-size: 0.7rem;
+    overflow-x: visible;
+    width: 50rem;
+    margin-top: 0.7rem;
 }
 
-.about_experience div{
-    margin-bottom: 1rem
+.about_experience div {
+    margin-bottom: 1rem;
 }
 
 .experience_name {
+    display: flex;
+    align-items: center;
     font-family: "Inter", serif;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -234,7 +270,7 @@ p {
 }
 
 .experience_description p{
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .experience_languages {
@@ -257,6 +293,11 @@ p {
 
 
 /**Projects*/
+.projects {
+    padding: 1.4rem;
+    padding-left: 0.8rem;
+}
+
 .projects_container a{
     display: flex;
     flex-direction: column;
@@ -270,6 +311,8 @@ p {
 .projects_container a:hover {
     background-color: var(--external-link-bg-color);
     backdrop-filter: blur(30px);
+    opacity: 1;
+    box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.3);
 }
 
 .projects_container a:hover .projects_name {
@@ -310,6 +353,11 @@ p {
 
 
 /**Games*/
+.games {
+    padding: 1.4rem;
+    padding-left: 0.8rem;
+}
+
 .games_container a{
     display: flex;
     flex-direction: row;
@@ -324,6 +372,8 @@ p {
 .games_container a:hover {
     background-color: var(--external-link-bg-color);
     backdrop-filter: blur(30px);
+    opacity: 1;
+    box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.3);
 }
 
 .games_container a:hover .experience_name {
@@ -382,6 +432,10 @@ p {
 
 /**Smaller screen view*/
 @media (max-width: 985px) {
+    .blob {
+        display: none;
+    }
+
     /** Main content*/
     .main {
         flex-direction: column;
