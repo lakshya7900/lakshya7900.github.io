@@ -10,6 +10,8 @@
     --external-link-font-color: #8254d2;
     --external-link-bg-color: #3b216582;
     --experience-languages-bg-color: #401c72c1;
+    --popup-bg-color: #361e5ca8;
+    --pupup-text-bg-color: #53269ba5;
 }
 
 ::selection {
@@ -162,25 +164,6 @@ p {
 .section_link:hover .section_link_line {
     width: 4rem;
     background-color: var(--bold-font-color);
-}
-
-.arrow_icon {
-    overflow: visible;
-    margin-left: 3px;
-    width: 8px;
-    justify-content: center;
-    align-items: center;
-}
-  
-.arrow_head {
-    transform: translateX(0);
-    transition: transform 100ms ease-in-out;
-}
-  
-.arrow_body {
-    opacity: 0;
-    transform: scaleX(1);
-    transition: transform 100ms ease-in-out;
 }
 
 
@@ -430,6 +413,143 @@ p {
 }
 
 
+/**3D Models*/
+
+/**Navbar*/
+.renders_navbar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1% 2%;
+    box-shadow: 0px -3px 9px 20px #0f172aa3;
+}
+
+.renders_navbar a {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: var(--bold-font-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.renders_home {
+    margin-right: 3.5rem;
+}
+
+.renders_home:hover {
+    color: var(--external-link-font-color);
+}
+
+/**Gallery*/
+.renders_gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    justify-content: space-around;
+    width: calc(100% - 40px);
+    padding: 0 20px;
+    margin: 5rem auto;
+}
+
+.render {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--popup-bg-color);
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    backdrop-filter: blur(2px);
+}
+
+.overlay span {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: var(--bold-font-color);
+    background-color: var(--pupup-text-bg-color);
+    border-radius: 20px;
+    padding: 0.7rem 1.8rem;
+}
+
+.render:hover .overlay {
+    opacity: 1;
+}
+
+.popup {
+    z-index: 10000;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 5, 41, 0.397);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup_content {
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup video {
+    height: 80dvh;
+    border-radius: 8px;
+}
+
+.popup img {
+    height: 90dvh;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+
 /**Smaller screen view*/
 @media (max-width: 985px) {
     .blob {
@@ -518,12 +638,17 @@ p {
         background: rgba(255, 255, 255, 0);
         backdrop-filter: blur(10px);
         z-index: 1000;
-        padding-top: 2%;
-        padding-left: 6%;
+        padding-top: 1.2%;
+        padding-left: 3.5%;
         font-family: "Inter", serif;
         font-optical-sizing: auto;
         font-weight: 500;
         font-style: normal;
         font-size: 1.7rem;
+    }
+
+    /**Renders*/
+    .renders_navbar {
+        background: radial-gradient(circle, rgba(124, 0, 155, 0.242), var(--bg-color));
     }
 }

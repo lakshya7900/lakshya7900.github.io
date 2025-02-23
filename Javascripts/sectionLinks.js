@@ -10,10 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Click event: When a link is clicked, update the active state immediately
     sectionLinks.forEach(link => {
       link.addEventListener('click', (e) => {
+        if (link.getAttribute('href') === '/renders.html') {
+          return;
+      }
+
         e.preventDefault(); // Prevent default anchor jump behavior
         const targetID = link.getAttribute('href').slice(1);
         const targetSection = document.getElementById(targetID);
-        if (targetSection) {
+        if (targetSection ) {
           window.scrollTo({
             top: targetSection.offsetTop,
             behavior: 'smooth'
