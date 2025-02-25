@@ -6,9 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lakshya Agarwal</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="Assets/Logo.jpg" />
 </head>
 
 <body>
+    <div id="loader">
+		<div class="blue"></div>
+		<div class="white"></div>
+		<div class="text-wrap">
+			<div class="text">L</div>
+            <span>.</span>
+		</div>
+	</div>
+
     <div class="blob"></div>
 
     <div class="navbar bold_text">
@@ -257,6 +267,15 @@
     <script src="https://kit.fontawesome.com/5b1f48684e.js" crossorigin="anonymous"></script>
     <script src="Javascripts/mousefollow.js"></script>
     <script src="Javascripts/externalLinks.js"></script>
+
+
+    <script type="module">
+        import { animateOut } from './Javascripts/loader.js';
+
+        window.onload = function () {
+            animateOut();
+        };
+    </script>
 </body>
 
 </html>
