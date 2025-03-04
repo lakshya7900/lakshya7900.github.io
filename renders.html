@@ -35,7 +35,6 @@
             </div>
         </div>
 
-        
         <div class="render">
             <img class="content" src="https://i.imgur.com/A4hyqXe.jpg" alt="Post Image"  onclick="openPopup(this)" >
 
@@ -85,7 +84,7 @@
         </div>
 
         <div class="render">
-            <img class="content"  onclick="openPopup(this)" src="https://i.imgur.com/GSbZ4uz.png alt="Post Image">
+            <img class="content"  onclick="openPopup(this)" src="https://i.imgur.com/GSbZ4uz.png" alt="Post Image">
 
             <div class="overlay">
                 <span>Full Screen</span>
@@ -166,11 +165,15 @@
     </div>
 
     <div id="popup" class="popup">
-        <span class="close" onclick="closePopup()" style="font-size: 5rem;">&times;</span>
+        <span class="close" onclick="closePopup()">&times;</span>
+        <i class="fa-solid fa-caret-left left_arrow" onclick="showPreviousContent()"></i>
+
         <div class="popup_content">
-            <img alt="" id="popup_img">
-            <video id="popup_vid" controls="1"></video>
+            <div class="popup_img_container"><img alt="" id="popup_img"></div>
+            <div class="popup_vid_container"><video id="popup_vid" controls="1"></video></div> 
         </div>
+        
+        <i class="fa-solid fa-caret-right right_arrow" onclick="showNextContent()"></i>
     </div>
 
     <script src="https://kit.fontawesome.com/5b1f48684e.js" crossorigin="anonymous"></script>
