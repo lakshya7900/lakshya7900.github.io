@@ -799,6 +799,22 @@ p {
         aspect-ratio: 16/9;
     }
 
+    .renders_navbar {
+        padding-top: 4%;
+    }
+
+    .overlay {
+        display: none;
+    }
+
+    .renders_navbar a {
+        font-size: 1rem;
+    }
+
+    .render {
+        aspect-ratio: 9/16;
+    }
+
 
     /**Each Sectins's Header*/
     #header {
