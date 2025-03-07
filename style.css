@@ -14,6 +14,12 @@
     --pupup-text-bg-color: #53269ba5;
 }
 
+html {
+    -webkit-font-smoothing: antialiased;
+    animation: ease-in-out;
+    -webkit-animation: ease-in-out;
+}
+
 ::selection {
     background: var(--highlited-bg-color);
     color: var(--highlited-normal-font-color);
@@ -157,7 +163,9 @@ p {
     height: 450px;
     background: radial-gradient(circle, rgba(255, 0, 150, 0.8), rgba(0, 204, 255, 0.6));
     border-radius: 50%;
+    backdrop-filter: blur(200px);
     filter: blur(200px);
+    -webkit-filter: blur(200px);
     pointer-events: none;
     z-index: -1;
     transition: all 0.1s ease-out;
