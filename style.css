@@ -284,7 +284,7 @@ p {
 .experiences {
     padding: 1.4rem;
     padding-left: 0.8rem;
-    padding-top: 0;
+    padding-top: .8rem;
 }
 
 .experience_container a{
@@ -343,6 +343,7 @@ p {
 
 .experience_description p{
     font-size: 0.9rem;
+    max-width: 160rem;;
 }
 
 .experience_languages {

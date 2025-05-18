@@ -11,11 +11,11 @@ let urls = [];
 document.addEventListener('keydown', (event) => {
     if (popupIsOpen) {
         switch (event.key) {
-            case 'ArrowLeft':
+            case 'ArrowRight':
                 showNextContent()
                 break;
     
-            case 'ArrowRight':
+            case 'ArrowLeft':
                 showPreviousContent()
                 break;
 
