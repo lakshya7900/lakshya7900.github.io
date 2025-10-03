@@ -10,24 +10,30 @@ import { GradientOrbs } from "~/components/gradient-orbs";
 import "~/styles/globals.css";
 import "~/styles/lightbox.css";
 
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const geist = Geist({
   subsets: ["latin"],
 });
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
+    
     <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
+    attribute="class"
+    defaultTheme="system"
+    enableSystem
+    disableTransitionOnChange
     >
-      <div className={geist.className}>
+      <Analytics />
+      <SpeedInsights />
 
+      <div className={geist.className}>
         <Head>
           <title>Lakshya Agrawal - Portfolio</title>
           <meta name="description" content="Full Stack Developer & Software Engineer" />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="Logo.jpg" />
         </Head>
 
         <ThemeToggle />
