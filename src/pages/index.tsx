@@ -143,7 +143,7 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={0.05}>
             <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl">
-              Hi, I'm{" "}
+              Hi, I&apos;m{" "}
               <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
                 Lakshya Agrawal
               </span>
@@ -327,7 +327,7 @@ export default function Home() {
             <FadeIn delay={0.1}>
               <Card className="mx-auto max-w-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
                 <CardHeader>
-                  <CardTitle>Bachelor's in General Engineering with Major in Computer Science</CardTitle>
+                  <CardTitle>Bachelor&apos;s in General Engineering with Major in Computer Science</CardTitle>
                   <CardDescription className="text-base">
                     Computer Science & Engineering
                   </CardDescription>
@@ -357,11 +357,11 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
             <FadeIn>
-              <h2 className="mb-6 text-3xl font-bold sm:text-4xl">Let's Work Together</h2>
+              <h2 className="mb-6 text-3xl font-bold sm:text-4xl">Let&apos;s Work Together</h2>
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="mb-8 text-lg text-[hsl(var(--color-muted-foreground))]">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
               </p>
             </FadeIn>
             <FadeIn delay={0.15}>
