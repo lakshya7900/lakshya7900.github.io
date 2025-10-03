@@ -1,0 +1,81 @@
+/* Lightbox custom styles to match theme */
+.yarl__root {
+  --yarl__color_backdrop: rgba(0, 0, 0, 0.95);
+}
+
+/* Make buttons more visible with liquid glass effect */
+.yarl__button {
+  filter: none !important;
+  background-color: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 50%, 
+    rgba(255, 255, 255, 0.08) 100%) !important;
+  backdrop-filter: blur(4px) saturate(180%);
+  -webkit-backdrop-filter: blur(4px) saturate(180%) !important;
+  border: 1px solid transparent !important;
+  border-radius: 12px !important;
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  color: white !important;
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.1) !important;
+  will-change: transform !important;
+  transform: translateY(0) !important;
+}
+
+.yarl__button::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  border-radius: 12px !important;
+  padding: 1px !important;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.3) 0%, 
+    rgba(255, 255, 255, 0.1) 25%, 
+    rgba(255, 255, 255, 0.05) 50%, 
+    rgba(255, 255, 255, 0.1) 75%, 
+    rgba(255, 255, 255, 0.2) 100%) !important;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+  mask-composite: xor !important;
+  -webkit-mask-composite: xor !important;
+  z-index: -1 !important;
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.yarl__button:hover {
+  backdrop-filter: blur(7px) saturate(90%);
+  -webkit-backdrop-filter: blur(7px) saturate(90%) !important;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(255, 255, 255, 0.08) 50%, 
+    rgba(255, 255, 255, 0.12) 100%) !important;
+  box-shadow: 
+    0 12px 40px 0 rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-2px) !important;
+}
+
+.yarl__button:hover::before {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.5) 0%, 
+    rgba(255, 255, 255, 0.2) 25%, 
+    rgba(255, 255, 255, 0.1) 50%, 
+    rgba(255, 255, 255, 0.2) 75%, 
+    rgba(255, 255, 255, 0.4) 100%) !important;
+}
+
+/* Close button styling */
+.yarl__button[aria-label="Close"] {
+  width: 44px !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
