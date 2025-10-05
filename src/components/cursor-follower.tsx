@@ -53,7 +53,7 @@ export function CursorFollower() {
       }}
     >
       <div 
-        className="h-6 w-6 rounded-full border-2 border-[hsl(var(--color-primary))] bg-[hsl(var(--color-primary))]/10 transition-transform duration-150"
+        className="h-6 w-6 rounded-full border-2 border-blue-400 bg-blue-400/10 transition-transform duration-150"
         style={{
           transform: isHovering ? "scale(1.5)" : "scale(1)",
         }}

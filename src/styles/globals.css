@@ -3,61 +3,243 @@
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
-  /* Light mode colors */
-  --color-background: 0 0% 100%;
-  --color-foreground: 222.2 84% 4.9%;
-  --color-card: 0 0% 100%;
-  --color-card-foreground: 222.2 84% 4.9%;
-  --color-popover: 0 0% 100%;
-  --color-popover-foreground: 222.2 84% 4.9%;
-  --color-primary: 221.2 83.2% 53.3%;
-  --color-primary-foreground: 210 40% 98%;
-  --color-secondary: 210 40% 96.1%;
-  --color-secondary-foreground: 222.2 47.4% 11.2%;
-  --color-muted: 210 40% 96.1%;
-  --color-muted-foreground: 215.4 16.3% 46.9%;
-  --color-accent: 210 40% 96.1%;
-  --color-accent-foreground: 222.2 47.4% 11.2%;
-  --color-destructive: 0 84.2% 60.2%;
-  --color-destructive-foreground: 210 40% 98%;
-  --color-border: 214.3 31.8% 91.4%;
-  --color-input: 214.3 31.8% 91.4%;
-  --color-ring: 221.2 83.2% 53.3%;
-  --radius: 0.5rem;
-}
-
-.dark {
-  --color-background: 222.2 84% 4.9%;
-  --color-foreground: 210 40% 98%;
-  --color-card: 222.2 84% 4.9%;
-  --color-card-foreground: 210 40% 98%;
-  --color-popover: 222.2 84% 4.9%;
-  --color-popover-foreground: 210 40% 98%;
-  --color-primary: 217.2 91.2% 59.8%;
-  --color-primary-foreground: 222.2 47.4% 11.2%;
-  --color-secondary: 217.2 32.6% 17.5%;
-  --color-secondary-foreground: 210 40% 98%;
-  --color-muted: 217.2 32.6% 17.5%;
-  --color-muted-foreground: 215 20.2% 65.1%;
-  --color-accent: 217.2 32.6% 17.5%;
-  --color-accent-foreground: 210 40% 98%;
-  --color-destructive: 0 62.8% 30.6%;
-  --color-destructive-foreground: 210 40% 98%;
-  --color-border: 217.2 32.6% 17.5%;
-  --color-input: 217.2 32.6% 17.5%;
-  --color-ring: 224.3 76.3% 48%;
-}
-
-* {
-  border-color: hsl(var(--color-border));
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: hsl(var(--color-background));
-  color: hsl(var(--color-foreground));
+/* Terminal-specific styles */
+@layer utilities {
+  .terminal-cursor {
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
+  .terminal-glow {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+  }
+  
+  .terminal-text-shadow {
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+  }
+  
+  .scrollbar-terminal::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scrollbar-terminal::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .scrollbar-terminal::-webkit-scrollbar-thumb {
+    background: rgba(34, 197, 94, 0.3);
+    border-radius: 4px;
+  }
+  
+  .scrollbar-terminal::-webkit-scrollbar-thumb:hover {
+    background: rgba(34, 197, 94, 0.5);
+  }
+
+  /* Code-like styling for all elements */
+  .code-block {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 0;
+    font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
+    position: relative;
+  }
+
+  .code-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.5), transparent);
+  }
+
+  .syntax-keyword {
+    color: #569cd6; /* Blue for keywords */
+  }
+
+  .syntax-string {
+    color: #ce9178; /* Orange for strings */
+  }
+
+  .syntax-comment {
+    color: #6a9955; /* Green for comments */
+  }
+
+  .syntax-function {
+    color: #dcdcaa; /* Yellow for functions */
+  }
+
+  .syntax-variable {
+    color: #9cdcfe; /* Light blue for variables */
+  }
+
+  .syntax-operator {
+    color: #d4d4d4; /* White for operators */
+  }
+
+  .code-line-number {
+    color: #6a9955;
+    font-size: 0.8em;
+    margin-right: 1rem;
+    user-select: none;
+  }
+
+  .code-bracket {
+    color: #ffd700; /* Gold for brackets */
+  }
+
+  .code-annotation {
+    background: rgba(34, 197, 94, 0.1);
+    border-left: 3px solid rgba(34, 197, 94, 0.5);
+    padding-left: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  /* Code editor-like background */
+  .code-editor-bg {
+    background: #1e1e1e;
+    background-image: 
+      linear-gradient(rgba(34, 197, 94, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 197, 94, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  /* Text overflow fixes */
+  .text-wrap {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Ensure proper text wrapping in all sections */
+  .section-content {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+
+  /* Fix long URLs and text in badges */
+  .badge-text {
+    word-break: break-all;
+    max-width: 100%;
+  }
+
+  /* Ensure list items don't overflow */
+  .list-item {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+
+}
+
+/* Terminal Toast Styles */
+.terminal-toast {
+  font-family: 'Courier New', 'Monaco', 'Menlo', monospace !important;
+  border-radius: 4px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Mobile Safari Lightbox Fix */
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari specific fixes */
+  .yarl__container {
+    height: 100vh !important;
+    height: -webkit-fill-available !important;
+  }
+  
+  .yarl__slide {
+    height: 100vh !important;
+    height: -webkit-fill-available !important;
+  }
+  
+  .yarl__slide__content {
+    height: 100vh !important;
+    height: -webkit-fill-available !important;
+  }
+  
+  .yarl__slide__image {
+    height: 100vh !important;
+    height: -webkit-fill-available !important;
+  }
+  
+  .yarl__slide__video {
+    height: 100vh !important;
+    height: -webkit-fill-available !important;
+  }
+}
+
+/* Dark theme toasts */
+[data-theme="dark"] .terminal-toast,
+.terminal-toast {
+  background: #0a0a0a !important;
+  border: 1px solid #22c55e !important;
+  color: #22c55e !important;
+}
+
+[data-theme="dark"] .terminal-toast [data-icon] {
+  color: #22c55e !important;
+}
+
+[data-theme="dark"] .terminal-toast [data-title] {
+  color: #22c55e !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .terminal-toast [data-description] {
+  color: #a3a3a3 !important;
+  font-size: 12px !important;
+}
+
+/* Light theme toasts */
+[data-theme="light"] .terminal-toast {
+  background: #f8f9fa !important;
+  border: 1px solid #16a34a !important;
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .terminal-toast [data-icon] {
+  color: #16a34a !important;
+}
+
+[data-theme="light"] .terminal-toast [data-title] {
+  color: #16a34a !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="light"] .terminal-toast [data-description] {
+  color: #6b7280 !important;
+  font-size: 12px !important;
+}
+
+/* Toast close button styling */
+.terminal-toast [data-close-button] {
+  color: #22c55e !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+[data-theme="light"] .terminal-toast [data-close-button] {
+  color: #16a34a !important;
+}
+
+/* Toast progress bar */
+.terminal-toast [data-progress] {
+  background: #22c55e !important;
+}
+
+[data-theme="light"] .terminal-toast [data-progress] {
+  background: #16a34a !important;
 }

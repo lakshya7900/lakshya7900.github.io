@@ -161,14 +161,14 @@ export default function Renders() {
           <FadeIn>
             <div className="flex items-center gap-4 mb-8">
               <Button asChild variant="ghost" size="sm">
-                <Link href="/" className="flex items-center">
+                <Link href="/" className="flex items-center text-white">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back to Home
                 </Link>
               </Button>
             </div>
             <div className="mb-12 text-center">
-              <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-white">
                 3D Renders & Videos
               </h1>
             </div>

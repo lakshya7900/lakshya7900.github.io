@@ -6,7 +6,8 @@ import {
   Code2, 
   Briefcase, 
   GraduationCap,
-  Terminal 
+  Terminal,
+  Cpu
 } from "lucide-react";
 
 import { Button } from "~/components/ui/button";
@@ -142,7 +143,7 @@ export default function Home() {
             </div>
           </FadeIn>
           <FadeIn delay={0.05}>
-            <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl">
+            <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl">
               Hi, I&apos;m{" "}
               <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
                 Lakshya Agrawal
@@ -150,39 +151,39 @@ export default function Home() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <p className="mb-8 text-xl text-[hsl(var(--color-muted-foreground))] sm:text-2xl">
+            <p className="mb-8 text-xl text-gray-300 sm:text-2xl">
               Full Stack Developer & Software Engineer
             </p>
           </FadeIn>
           <FadeIn delay={0.15}>
-            <p className="mb-10 text-lg text-[hsl(var(--color-muted-foreground))]">
+            <p className="mb-10 text-lg text-gray-300">
               Passionate about building elegant solutions to complex problems. 
               Specialized in modern web technologies and creating exceptional user experiences.
             </p>
           </FadeIn>
            <FadeIn delay={0.2}>
              <div className="flex flex-wrap items-center justify-center gap-4">
-                <Button asChild size="lg" className="transition-transform hover:scale-105" onClick={() => { window.open("mailto:aglakshya06@gmail.com", "_blank"); }}>
+                <Button asChild size="lg" className="transition-transform hover:scale-105 text-white" onClick={() => { window.open("mailto:aglakshya06@gmail.com", "_blank"); }}>
                   <Mail className="mr-2 h-5 w-5" />
                   Email Me
                 </Button>
 
-               <Button asChild variant="outline" size="lg" className="transition-transform hover:scale-105" onClick={() => { window.open("/renders", "_blank"); }}>
+               <Button asChild variant="outline" size="lg" className="transition-transform hover:scale-105 text-white border-white hover:bg-white hover:text-gray-900" onClick={() => { window.open("/renders", "_blank"); }}>
                   View 3D Renders
                </Button>
              </div>
            </FadeIn>
            <FadeIn delay={0.25}>
              <div className="mt-8 flex items-center justify-center gap-4">
-               <Button asChild variant="ghost" size="icon" className="transition-transform hover:scale-110" onClick={() => { window.open("https://github.com/lakshya7900", "_blank"); }}>
+               <Button asChild variant="ghost" size="icon" className="transition-transform hover:scale-110 text-white hover:bg-gray-800 hover:text-white" onClick={() => { window.open("https://github.com/lakshya7900", "_blank"); }}>
                   <Github className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
                </Button>
-               <Button asChild variant="ghost" size="icon" className="transition-transform hover:scale-110" onClick={() => { window.open("http://www.linkedin.com/in/lakshya7900", "_blank"); }}>
+               <Button asChild variant="ghost" size="icon" className="transition-transform hover:scale-110 text-white hover:bg-gray-800 hover:text-white" onClick={() => { window.open("http://www.linkedin.com/in/lakshya7900", "_blank"); }}>
                   <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                </Button>
-               <Button asChild variant="ghost" size="icon" className="transition-transform hover:scale-110" onClick={() => { window.open("https://leetcode.com/u/lakshya7900", "_blank"); }}>
+               <Button asChild variant="ghost" size="icon" className="transition-transform hover:scale-110 text-white hover:bg-gray-800 hover:text-white" onClick={() => { window.open("https://leetcode.com/u/lakshya7900", "_blank"); }}>
                   <Code2 className="h-5 w-5" />
                   <span className="sr-only">LeetCode</span>
                </Button>
@@ -192,41 +193,41 @@ export default function Home() {
       </section>
 
       {/* Experience Section */}
-      <section className="relative z-10 border-t border-[hsl(var(--color-border))] bg-[hsl(var(--color-muted))] py-20">
+      <section className="relative z-10 border-t border-gray-800 bg-gray-800 py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
             <FadeIn>
               <div className="mb-12 text-center">
-                <Briefcase className="mx-auto mb-4 h-12 w-12 text-[hsl(var(--color-primary))]" />
-                <h2 className="text-3xl font-bold sm:text-4xl">Work Experience</h2>
+                <Briefcase className="mx-auto mb-4 h-12 w-12 text-blue-400" />
+                <h2 className="text-3xl font-bold text-white sm:text-4xl">Work Experience</h2>
               </div>
             </FadeIn>
             <StaggerContainer className="space-y-6">
               {experiences.map((exp, index) => (
                 <StaggerItem key={index}>
-                  <Card className="transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+                  <Card className="transition-all duration-300 hover:scale-[1.02] hover:shadow-lg border border-gray-700">
                     <CardHeader>
                       <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
                         <div>
-                          <CardTitle className="text-xl">{exp.title}</CardTitle>
-                          <CardDescription className="mt-1 text-base">
+                          <CardTitle className="text-xl text-white">{exp.title}</CardTitle>
+                          <CardDescription className="mt-1 text-base text-gray-300">
                             {exp.company}
                           </CardDescription>
                         </div>
-                        <Badge variant="outline" className="w-fit">
+                        <Badge variant="outline" className="w-fit text-white border-white">
                           {exp.period}
                         </Badge>
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="mb-4 text-[hsl(var(--color-muted-foreground))]">
+                      <p className="mb-4 text-gray-300">
                         {exp.description}
                       </p>
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start">
-                            <span className="mr-2 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[hsl(var(--color-primary))]" />
-                            <span className="text-sm">{achievement}</span>
+                            <span className="mr-2 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-400" />
+                            <span className="text-sm text-white">{achievement}</span>
                           </li>
                         ))}
                       </ul>
@@ -240,24 +241,24 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className="relative z-10 py-20">
+      <section className="relative z-10 py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
             <FadeIn>
-              <Terminal className="mx-auto mb-4 h-12 w-12 text-[hsl(var(--color-primary))]" />
-              <h2 className="mb-12 text-center text-3xl font-bold sm:text-4xl">Skills & Technologies</h2>
+              <Cpu className="mx-auto mb-4 h-12 w-12 text-blue-400" />
+              <h2 className="mb-12 text-center text-3xl font-bold text-white sm:text-4xl">Skills & Technologies</h2>
             </FadeIn>
             <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {skills.map((category) => (
                 <StaggerItem key={category.name}>
-                  <Card className="h-full transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                  <Card className="h-full transition-all duration-300 hover:scale-105 hover:shadow-lg border border-gray-700">
                     <CardHeader>
-                      <CardTitle>{category.name}</CardTitle>
+                      <CardTitle className="text-white">{category.name}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="flex flex-wrap gap-2">
                         {category.items.map((skill) => (
-                          <Badge key={skill} variant="secondary" className="transition-colors hover:bg-[hsl(var(--color-primary))] hover:text-[hsl(var(--color-primary-foreground))]">
+                          <Badge key={skill} variant="secondary" className="transition-colors hover:bg-blue-600 hover:text-white text-white bg-gray-800">
                             {skill}
                           </Badge>
                         ))}
@@ -272,34 +273,34 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="relative z-10 border-t border-[hsl(var(--color-border))] bg-[hsl(var(--color-muted))] py-20">
+      <section id="projects" className="relative z-10 border-t border-gray-800 bg-gray-800 py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
             <FadeIn>
               <div className="mb-12 text-center">
-                <Code2 className="mx-auto mb-4 h-12 w-12 text-[hsl(var(--color-primary))]" />
-                <h2 className="text-3xl font-bold sm:text-4xl">Projects</h2>
+                <Code2 className="mx-auto mb-4 h-12 w-12 text-blue-400" />
+                <h2 className="text-3xl font-bold text-white sm:text-4xl">Projects</h2>
               </div>
             </FadeIn>
             <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {projects.map((project, index) => (
                 <StaggerItem key={index}>
-                  <Card className="flex h-full flex-col transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                  <Card className="flex h-full flex-col transition-all duration-300 hover:scale-105 hover:shadow-xl border border-gray-700">
                     <CardHeader>
-                      <CardTitle className="text-lg">{project.title}</CardTitle>
+                      <CardTitle className="text-lg text-white">{project.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-1 flex-col">
-                      <p className="mb-4 flex-1 text-sm text-[hsl(var(--color-muted-foreground))]">
+                      <p className="mb-4 flex-1 text-sm text-gray-300">
                         {project.description}
                       </p>
                       <div className="mb-4 flex flex-wrap gap-2">
                         {project.tech.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="text-xs transition-colors hover:bg-[hsl(var(--color-primary))] hover:text-[hsl(var(--color-primary-foreground))]">
+                          <Badge key={tech} variant="secondary" className="text-xs transition-colors hover:bg-blue-600 hover:text-white text-white bg-gray-900">
                             {tech}
                           </Badge>
                         ))}
                       </div>
-                      <Button asChild variant="outline" size="sm" className="w-full transition-transform hover:scale-105" onClick={() => {
+                      <Button asChild variant="outline" size="sm" className="w-full transition-transform hover:scale-105 text-white border-white hover:bg-white hover:text-gray-900" onClick={() => {
                         window.open(project.link, "_blank");
                       }}>
                           <ExternalLink className="mr-2 h-4 w-4" />
@@ -314,33 +315,79 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section className="relative z-10 py-20">
+      {/* Terminal View Section */}
+      <section className="relative z-10 border-t border-gray-800 bg-gray-900 py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
             <FadeIn>
               <div className="mb-12 text-center">
-                <GraduationCap className="mx-auto mb-4 h-12 w-12 text-[hsl(var(--color-primary))]" />
-                <h2 className="text-3xl font-bold sm:text-4xl">Education</h2>
+                <Terminal className="mx-auto mb-4 h-12 w-12 text-green-400" />
+                <h2 className="text-3xl font-bold text-white sm:text-4xl">Terminal View</h2>
+                <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+                  Experience my portfolio through an interactive terminal interface. Navigate through my work using command-line style interactions.
+                </p>
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <Card className="mx-auto max-w-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+              <div className="text-center">
+                <div className="inline-block bg-black rounded-lg p-8 font-mono text-left max-w-2xl">
+                  <div className="flex items-center mb-4">
+                    <div className="flex space-x-2 mr-4">
+                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <span className="text-green-400 text-sm">portfolio@terminal:~$</span>
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <div className="text-green-400">$ ls</div>
+                    <div className="text-blue-400 ml-4">about/ experience/ projects/ skills/ education/ contact/</div>
+                    <div className="text-green-400">$ cat about</div>
+                    <div className="text-gray-300 ml-4">Full Stack Developer passionate about building elegant solutions...</div>
+                    <div className="text-green-400">$ help</div>
+                    <div className="text-blue-400 ml-4">Available commands: ls, about, experience, projects, skills...</div>
+                    <div className="text-green-400 animate-pulse">$ _</div>
+                  </div>
+                </div>
+                <div className="mt-8">
+                  <Button asChild size="lg" className="transition-transform hover:scale-105 text-white bg-green-600 hover:bg-green-700" onClick={() => { window.open("/terminal", "_blank"); }}>
+                    <Terminal className="mr-2 h-5 w-5" />
+                    Launch Terminal View
+                  </Button>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section className="relative z-10 py-20 bg-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-5xl">
+            <FadeIn>
+              <div className="mb-12 text-center">
+                <GraduationCap className="mx-auto mb-4 h-12 w-12 text-blue-400" />
+                <h2 className="text-3xl font-bold text-white sm:text-4xl">Education</h2>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <Card className="mx-auto max-w-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg border border-gray-700">
                 <CardHeader>
-                  <CardTitle>Bachelor&apos;s in General Engineering with Major in Computer Science</CardTitle>
-                  <CardDescription className="text-base">
+                  <CardTitle className="text-white">Bachelor&apos;s in General Engineering with Major in Computer Science</CardTitle>
+                  <CardDescription className="text-base text-gray-300">
                     Computer Science & Engineering
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[hsl(var(--color-muted-foreground))]">
+                  <p className="text-gray-300">
                     Virginia Polytechnic Institute and State University
                   </p>
                   <a 
                     href="https://www.vt.edu" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="mt-2 inline-flex items-center text-sm text-[hsl(var(--color-primary))] transition-all hover:translate-x-1 hover:underline"
+                    className="mt-2 inline-flex items-center text-sm text-blue-400 transition-all hover:translate-x-1 hover:underline"
                   >
                     Visit Website
                     <ExternalLink className="ml-1 h-3 w-3" />
@@ -353,25 +400,25 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="relative z-10 border-t border-[hsl(var(--color-border))] bg-[hsl(var(--color-muted))] py-20">
+      <section className="relative z-10 border-t border-gray-800 bg-gray-900 py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
             <FadeIn>
-              <h2 className="mb-6 text-3xl font-bold sm:text-4xl">Let&apos;s Work Together</h2>
+              <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">Let&apos;s Work Together</h2>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <p className="mb-8 text-lg text-[hsl(var(--color-muted-foreground))]">
+              <p className="mb-8 text-lg text-gray-300">
                 I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
               </p>
             </FadeIn>
             <FadeIn delay={0.15}>
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <Button asChild size="lg" className="transition-transform hover:scale-105" onClick={() => { window.open("mailto:aglakshya06@gmail.com", "_blank"); }}>
+                <Button asChild size="lg" className="transition-transform hover:scale-105 text-white" onClick={() => { window.open("mailto:aglakshya06@gmail.com", "_blank"); }}>
                   <Mail className="mr-2 h-5 w-5" />
                   Email Me
                 </Button>
 
-                <Button asChild variant="outline" size="lg" className="transition-transform hover:scale-105" onClick={() => { window.open("https://linkedin.com/in/lakshya7900", "_blank"); }}>
+                <Button asChild variant="outline" size="lg" className="transition-transform hover:scale-105 text-white border-white hover:bg-white hover:text-gray-900" onClick={() => { window.open("https://linkedin.com/in/lakshya7900", "_blank"); }}>
                   <Linkedin className="mr-2 h-5 w-5" />
                   Connect on LinkedIn
                 </Button>
