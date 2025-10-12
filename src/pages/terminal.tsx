@@ -625,14 +625,21 @@ function TerminalPageContent() {
                     : "bg-gray-200 hover:bg-gray-300 text-gray-800 border-gray-400"
                 }`}
               >
-                <span className="syntax-keyword">function</span> 
-                <span className="syntax-function">toggleTerminal</span>
-                <span className="code-bracket">()</span> 
-                <span className="code-bracket">{`{`}</span>
-                <span className="syntax-keyword">return</span> 
-                <span className="syntax-string">&quot;{isTerminalOpen ? "Hide" : "Show"}&quot;</span>
-                <span className="syntax-operator">;</span>
-                <span className="code-bracket">{`}`}</span>
+                <span className={`${theme === "dark" ? "text-blue-400" : "text-blue-600"}`}>function</span> 
+
+                <span className={`${theme === "dark" ? "text-yellow-100" : "text-yellow-600"}`}>toggleTerminal</span>
+
+                <span className={`${theme === "dark" ? "text-yellow-400" : "text-amber-700"}`}>()</span> 
+
+                <span className={`${theme === "dark" ? "text-yellow-400" : "text-amber-700"}`}>{`{`}</span>
+
+                <span className={`${theme === "dark" ? "text-blue-400" : "text-blue-600"}`}>return</span> 
+
+                <span className={`${theme === "dark" ? "text-orange-300" : "text-orange-600"}`}>&quot;{isTerminalOpen ? "Hide" : "Show"}&quot;</span>
+
+                <span className={`${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>;</span>
+
+                <span className={`${theme === "dark" ? "text-yellow-400" : "text-amber-700"}`}>{`}`}</span>
               </Button>
             </div>
           </div>

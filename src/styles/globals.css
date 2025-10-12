@@ -64,49 +64,6 @@ html {
     background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.5), transparent);
   }
 
-  .syntax-keyword {
-    color: #569cd6; /* Blue for keywords */
-  }
-
-  .syntax-string {
-    color: #ce9178; /* Orange for strings */
-  }
-
-  .syntax-comment {
-    color: #6a9955; /* Green for comments */
-  }
-
-  .syntax-function {
-    color: #dcdcaa; /* Yellow for functions */
-  }
-
-  .syntax-variable {
-    color: #9cdcfe; /* Light blue for variables */
-  }
-
-  .syntax-operator {
-    margin-left: -8px;
-    color: #d4d4d4; /* White for operators */
-  }
-
-  .code-line-number {
-    color: #6a9955;
-    font-size: 0.8em;
-    margin-right: 1rem;
-    user-select: none;
-  }
-
-  .code-bracket {
-    color: #ffd700; /* Gold for brackets */
-  }
-
-  .code-annotation {
-    background: rgba(34, 197, 94, 0.1);
-    border-left: 3px solid rgba(34, 197, 94, 0.5);
-    padding-left: 0.5rem;
-    margin: 0.5rem 0;
-  }
-
   /* Code editor-like background */
   .code-editor-bg {
     background: #1e1e1e;
