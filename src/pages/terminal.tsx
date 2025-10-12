@@ -275,7 +275,7 @@ function TerminalPageContent() {
           "",
           "Tips:",
           "  - Use Tab for autocomplete",
-          "  - Use ↑/↓ arrows for command history",
+          "  - Use Shift + ↑/↓ arrows for command history",
           "  - Use Escape to close suggestions",
           "  - Try the fun commands for a laugh!",
           ""
@@ -601,33 +601,37 @@ function TerminalPageContent() {
         <link rel="apple-touch-icon" href="/Logo.ico?v=2" />
         <meta name="msapplication-TileImage" content="/Logo.ico?v=2" />
       </Head>
-      <div className={`min-h-screen font-mono ${
+      <div className={`overflow-x-hidden min-h-screen font-mono ${
         theme === "dark" 
           ? "code-editor-bg text-green-400" 
           : "bg-gray-100 text-gray-800"
       }`}>
         <TerminalCursorFollower theme={theme} />
-      <div className="flex flex-col lg:flex-row h-screen">
+
+        <div className="flex flex-col lg:flex-row h-screen">
         {/* Mobile Navigation Bar */}
-        <div className={`lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b ${
+        <div className={`lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b overflow-x-hidden ${
           theme === "dark" 
             ? "code-block border-green-400/30" 
             : "bg-white border-gray-300"
         }`}>
-          <div className="flex items-center justify-between p-3">
-            <div className="flex items-center space-x-2">
+          <div className="justify-between p-3">
+            <div className="min-w-0">
               <Button
                 onClick={() => setIsTerminalOpen(!isTerminalOpen)}
-                className={`font-mono text-xs px-3 py-1 rounded-none ${
+                className={`font-mono text-xs py-1 rounded-none truncate w-full min-w-0 ${
                   theme === "dark"
                     ? "code-block hover:bg-green-400/30 text-green-400 border-green-400/50"
                     : "bg-gray-200 hover:bg-gray-300 text-gray-800 border-gray-400"
                 }`}
               >
-                <span className="syntax-keyword">function</span> <span className="syntax-function">toggleTerminal</span><span className="code-bracket">()</span> <span className="code-bracket">{`{`}</span>
-                <br />
-                &nbsp;&nbsp;<span className="syntax-keyword">return</span> <span className="syntax-string">&quot;{isTerminalOpen ? "Hide" : "Terminal"}&quot;</span><span className="syntax-operator">;</span>
-                <br />
+                <span className="syntax-keyword">function</span> 
+                <span className="syntax-function">toggleTerminal</span>
+                <span className="code-bracket">()</span> 
+                <span className="code-bracket">{`{`}</span>
+                <span className="syntax-keyword">return</span> 
+                <span className="syntax-string">&quot;{isTerminalOpen ? "Hide" : "Show"}&quot;</span>
+                <span className="syntax-operator">;</span>
                 <span className="code-bracket">{`}`}</span>
               </Button>
             </div>
@@ -672,8 +676,8 @@ function TerminalPageContent() {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
     </>
   );
 }

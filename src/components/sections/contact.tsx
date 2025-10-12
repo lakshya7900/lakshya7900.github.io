@@ -152,12 +152,12 @@ export function ContactSection({ theme = "dark" }: ContactSectionProps) {
                 Get In Touch
               </h2>
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row items-center justify-between">
                   <span className={`font-mono ${
                     theme === "dark" ? "text-gray-300" : "text-gray-600"
                   }`}>Email:</span>
                   <div className="flex items-center space-x-2">
-                    <span className={`font-mono ${
+                    <span className={`font-mono text-xs sm:text-base ${
                       theme === "dark" ? "text-green-400" : "text-green-600"
                     }`}>{contactInfo.email}</span>
                     <Button
@@ -174,11 +174,11 @@ export function ContactSection({ theme = "dark" }: ContactSectionProps) {
                     </Button>
                   </div>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center flex-col sm:flex-row  justify-between">
                   <span className={`font-mono ${
                     theme === "dark" ? "text-gray-300" : "text-gray-600"
                   }`}>Phone:</span>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex text-xs sm:text-base items-center space-x-2">
                     <span className={`font-mono ${
                       theme === "dark" ? "text-green-400" : "text-green-600"
                     }`}>{contactInfo.phone}</span>
@@ -196,11 +196,11 @@ export function ContactSection({ theme = "dark" }: ContactSectionProps) {
                     </Button>
                   </div>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center flex-col sm:flex-row  justify-between">
                   <span className={`font-mono ${
                     theme === "dark" ? "text-gray-300" : "text-gray-600"
                   }`}>Location:</span>
-                  <span className={`font-mono ${
+                  <span className={`font-mono text-xs sm:text-base ${
                       theme === "dark" ? "text-green-400" : "text-green-600"
                     }`}>{contactInfo.location}</span>
                 </div>

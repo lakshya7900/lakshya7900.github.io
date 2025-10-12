@@ -85,6 +85,7 @@ html {
   }
 
   .syntax-operator {
+    margin-left: -8px;
     color: #d4d4d4; /* White for operators */
   }
 

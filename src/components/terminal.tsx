@@ -74,20 +74,38 @@ export function Terminal({ history, onCommand, isTyping, theme = "dark", isWaiti
         setInput(suggestions[selectedSuggestion] ?? "");
         setShowSuggestions(false);
       }
+    } else if (e.key === "ArrowUp" && e.shiftKey) {
+        e.preventDefault();
+
+        if (historyIndex < commandHistory.length - 1) {
+          // Navigate through command history
+          const newIndex = historyIndex + 1;
+          setHistoryIndex(newIndex);
+          setInput(commandHistory[commandHistory.length - 1 - newIndex] ?? "");
+          setShowSuggestions(false);
+        }
     } else if (e.key === "ArrowUp") {
-      e.preventDefault();
-      if (showSuggestions && suggestions.length > 0) {
-        // Navigate through suggestions
-        setSelectedSuggestion(prev => 
-          prev > 0 ? prev - 1 : suggestions.length - 1
-        );
-      } else if (historyIndex < commandHistory.length - 1) {
-        // Navigate through command history
-        const newIndex = historyIndex + 1;
-        setHistoryIndex(newIndex);
-        setInput(commandHistory[commandHistory.length - 1 - newIndex] ?? "");
-        setShowSuggestions(false);
-      }
+        e.preventDefault();
+        if (showSuggestions && suggestions.length > 0) {
+          // Navigate through suggestions
+          setSelectedSuggestion(prev => 
+            prev > 0 ? prev - 1 : suggestions.length - 1
+          );
+        }
+    } else if (e.key === "ArrowDown" && e.shiftKey) {
+        e.preventDefault();
+
+        if (historyIndex > 0) {
+          // Navigate through command history
+          const newIndex = historyIndex - 1;
+          setHistoryIndex(newIndex);
+          setInput(commandHistory[commandHistory.length - 1 - newIndex] ?? "");
+          setShowSuggestions(false);
+        } else {
+          setHistoryIndex(-1);
+          setInput("");
+          setShowSuggestions(false);
+        }
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
       if (showSuggestions && suggestions.length > 0) {
@@ -95,16 +113,6 @@ export function Terminal({ history, onCommand, isTyping, theme = "dark", isWaiti
         setSelectedSuggestion(prev => 
           prev < suggestions.length - 1 ? prev + 1 : 0
         );
-      } else if (historyIndex > 0) {
-        // Navigate through command history
-        const newIndex = historyIndex - 1;
-        setHistoryIndex(newIndex);
-        setInput(commandHistory[commandHistory.length - 1 - newIndex] ?? "");
-        setShowSuggestions(false);
-      } else {
-        setHistoryIndex(-1);
-        setInput("");
-        setShowSuggestions(false);
       }
     } else if (e.key === "Escape") {
       setShowSuggestions(false);
@@ -316,7 +324,10 @@ export function Terminal({ history, onCommand, isTyping, theme = "dark", isWaiti
                 ref={inputRef}
                 type="text"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={(e) => {
+                  setInput(e.target.value);
+                  if (historyIndex !== -1) setHistoryIndex(-1);
+                }}
                 onKeyDown={handleKeyDown}
                 className={`flex-1 bg-transparent font-mono outline-none text-sm sm:text-base ${
                   theme === "dark" ? "text-green-400" : "text-gray-800"

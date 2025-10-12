@@ -202,7 +202,14 @@ export function ProjectsSection({ theme = "dark" }: ProjectsSectionProps) {
                 : "bg-white border-green-600/30"
             }`}>
             <div className="space-y-2 sm:space-y-3 ">
-              {filteredProjects.map((project) => (
+              {filteredProjects.length === 0 ? (
+                <div className={`text-center py-10 font-mono text-sm ${
+                  theme === "dark" ? "text-green-400" : "text-green-600"
+                }`}>
+                  No projects to show
+                </div>
+              ) : (
+                filteredProjects.map((project) => (
                 <Button
                   key={project.id}
                   variant={selectedProject?.id === project.id ? "default" : "ghost"}
@@ -253,7 +260,8 @@ export function ProjectsSection({ theme = "dark" }: ProjectsSectionProps) {
                     )}
                   </div>
                 </Button>
-              ))}
+                ))
+              )}
             </div>
           </Card>
 
