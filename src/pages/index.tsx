@@ -127,7 +127,7 @@ export default function Home() {
     {
       title: "Dodge Till Infinity",
       description: "A 2D obstacle-dodging game with continuously spawning obstacles, challenging players to survive as long as possible.",
-      tech: ["Unity3D"],
+      tech: ["Unity3D", "C#"],
       link: "http://ladev.itch.io/dodge-till-infinity",
     },
   ];
