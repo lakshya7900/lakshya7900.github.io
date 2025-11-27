@@ -19,7 +19,7 @@ interface Experience {
 const experiences: Experience[] = [
   {
     id: "1",
-    company: "SBM Group SIliguri",
+    company: "SBM Group Siliguri",
     position: "Web Developer Intern",
     duration: "May 2025 - August 2025",
     location: "West Bengal, India",
@@ -29,33 +29,6 @@ const experiences: Experience[] = [
       "Redesigned the company website using React.js and pure CSS for a responsive, modern user experience",
       "Developed new features to enhance engagement and streamline navigation",
       "Conducted market research to align the platform with industry trends and user needs"
-    ]
-  },
-  {
-    id: "2",
-    company: "EduBank.AI",
-    position: "Founder",
-    duration: "February 2025 - Present",
-    location: "Blacksburg, VA",
-    description: "Traditional study materials often limit AI-driven assistance, making it challenging for educators to maximize their resources. That's where EduBank.AI comes in!",
-    technologies: ["T3 Stak", "Next.js", "TailwindCSS", "GoLang"],
-    achievements: [
-      "Developing a platform where teachers can upload lecture notes in any format —PDFs, videos, images, and more.",
-      "Creating an AI system that processes the content and enables interactive learning.",
-      "Implementing features like question generation, unique example variations, and lecture assistance—all strictly based on the teacher's provided materials."
-    ]
-  },
-  {
-    id: "3",
-    company: "ModelVision",
-    position: "Co-founder",
-    duration: "September 2024 - October 2024",
-    location: "Blacksburg, VA",
-    description: "The absence of three-dimensional visual representations in educational books limits student engagement and hinders learning. That's where we come into play! ModelVision brings a new and innovative approach to learning. We bring textbooks to life.",
-    technologies: ["Unity3D", "C#"],
-    achievements: [
-      "Engineered an app enabling image capture and 3D AR model displays",
-      "Collaborated with team members to bring augmented reality applications to classrooms.",
     ]
   }
 ];

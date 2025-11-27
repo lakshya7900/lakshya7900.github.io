@@ -157,7 +157,7 @@ export function ContactSection({ theme = "dark" }: ContactSectionProps) {
                     theme === "dark" ? "text-gray-300" : "text-gray-600"
                   }`}>Email:</span>
                   <div className="flex items-center space-x-2">
-                    <span className={`font-mono text-xs sm:text-base ${
+                    <span className={`font-mono text-xs sm:text-[0.89rem] ${
                       theme === "dark" ? "text-green-400" : "text-green-600"
                     }`}>{contactInfo.email}</span>
                     <Button
@@ -178,7 +178,7 @@ export function ContactSection({ theme = "dark" }: ContactSectionProps) {
                   <span className={`font-mono ${
                     theme === "dark" ? "text-gray-300" : "text-gray-600"
                   }`}>Phone:</span>
-                  <div className="flex text-xs sm:text-base items-center space-x-2">
+                  <div className="flex text-xs sm:text-[0.89rem] items-center space-x-2">
                     <span className={`font-mono ${
                       theme === "dark" ? "text-green-400" : "text-green-600"
                     }`}>{contactInfo.phone}</span>
@@ -196,13 +196,27 @@ export function ContactSection({ theme = "dark" }: ContactSectionProps) {
                     </Button>
                   </div>
                 </div>
-                <div className="flex items-center flex-col sm:flex-row  justify-between">
+                <div className="flex items-center flex-col sm:flex-row justify-between">
                   <span className={`font-mono ${
                     theme === "dark" ? "text-gray-300" : "text-gray-600"
                   }`}>Location:</span>
-                  <span className={`font-mono text-xs sm:text-base ${
+                  <div className="flex text-xs sm:text-[0.89rem] items-center space-x-2">
+                    <span className={`font-mono ${
                       theme === "dark" ? "text-green-400" : "text-green-600"
                     }`}>{contactInfo.location}</span>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className={`${
+                        theme === "dark"
+                          ? "border-green-400/50 text-green-300 hover:bg-green-400/10"
+                          : "border-green-600/50 text-green-700 hover:bg-green-100"
+                      }`}
+                      onClick={() => copyToClipboard(contactInfo.location)}
+                    >
+                      Copy
+                    </Button>
+                  </div>
                 </div>
               </div>
             </Card>

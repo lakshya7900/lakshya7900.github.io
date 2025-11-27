@@ -22,7 +22,7 @@ export function Terminal({ history, onCommand, isTyping, theme = "dark", isWaiti
   const terminalRef = useRef<HTMLDivElement>(null);
 
   const availableCommands = React.useMemo(() => [
-    "help", "ls", "about", "experience", "projects", "skills", 
+    "help", "ls", "about", "experience", "hackathons", "projects", "skills", 
     "education", "contact", "renders", "clear", "whoami", 
     "date", "time", "version", "status", "info",
     "coffee", "motivation", "fortune", "matrix", 
@@ -259,7 +259,7 @@ export function Terminal({ history, onCommand, isTyping, theme = "dark", isWaiti
             ))
           ) : (
             // Show normal quick commands
-            ["help", "ls", "about", "experience", "projects", "skills", "renders", "coffee", "fortune", "resume"].map((cmd) => (
+            ["help", "ls", "about", "experience", "hackathons", "projects", "skills", "renders", "coffee", "fortune", "resume"].map((cmd) => (
               <button
                 key={cmd}
                 onClick={() => {

@@ -14,6 +14,7 @@ import { Button } from "~/components/ui/button";
 import { TerminalThemeProvider, useTerminalTheme } from "~/components/terminal-theme-provider";
 import { TerminalCursorFollower } from "~/components/terminal-cursor-follower";
 import { TerminalLoading } from "~/components/terminal-loading";
+import { HackathonsSection } from "~/components/sections/hackathons";
 
 function TerminalPageContent() {
   const [currentSection, setCurrentSection] = useState("about");
@@ -219,7 +220,7 @@ function TerminalPageContent() {
     
     // List of valid commands
     const validCommands = [
-      "help", "ls", "about", "experience", "projects", "skills", 
+      "help", "ls", "about", "experience", "hackathons", "projects", "skills", 
       "education", "contact", "renders", "clear", "whoami", 
       "date", "time", "version", "status", "info",
       "coffee", "motivation", "fortune", "matrix", 
@@ -244,6 +245,7 @@ function TerminalPageContent() {
           "  ls          - List all sections",
           "  about       - Show about me",
           "  experience  - Show work experience",
+          "  hackathons  - Show the hackathons I have taken part in",
           "  projects    - Show my projects",
           "  skills      - Show skills & technologies",
           "  education   - Show education",
@@ -287,6 +289,7 @@ function TerminalPageContent() {
           "Available sections:",
           "  about/",
           "  experience/",
+          "  hackathons/",
           "  projects/",
           "  skills/",
           "  education/",
@@ -322,6 +325,10 @@ function TerminalPageContent() {
       case "renders":
         setCurrentSection("renders");
         setTerminalHistory(prev => [...prev, "Switching to renders section..."]);
+        break;
+      case "hackathons":
+        setCurrentSection("hackathons");
+        setTerminalHistory(prev => [...prev, "Switching to hackathons section..."]);
         break;
       case "clear":
         setTerminalHistory([]);
@@ -581,6 +588,8 @@ function TerminalPageContent() {
         return <ContactSection theme={theme} />;
       case "renders":
         return <RendersSection theme={theme} />;
+      case "hackathons":
+        return <HackathonsSection theme={theme} />;
       default:
         return <AboutSection theme={theme} />;
     }
@@ -608,9 +617,9 @@ function TerminalPageContent() {
       }`}>
         <TerminalCursorFollower theme={theme} />
 
-        <div className="flex flex-col lg:flex-row h-screen">
+        <div className="flex flex-col xl:flex-row h-screen">
         {/* Mobile Navigation Bar */}
-        <div className={`lg:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b overflow-x-hidden ${
+        <div className={`xl:hidden fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b overflow-x-hidden ${
           theme === "dark" 
             ? "code-block border-green-400/30" 
             : "bg-white border-gray-300"
@@ -646,11 +655,11 @@ function TerminalPageContent() {
         </div>
 
         {/* Terminal Sidebar */}
-        <div className={`w-full lg:w-1/3 border-b lg:border-b-0 lg:border-r transition-all duration-300 ${
+        <div className={`w-full xl:w-1/3 border-b xl:border-b-0 xl:border-r transition-all duration-300 ${
           theme === "dark" ? "border-green-400/30" : "border-gray-300"
         } ${
-          isTerminalOpen ? 'h-1/2' : 'h-0 lg:h-full'
-        } ${isTerminalOpen ? 'opacity-100' : 'opacity-0 lg:opacity-100'} overflow-hidden`}>
+          isTerminalOpen ? 'h-1/2' : 'h-0 xl:h-full'
+        } ${isTerminalOpen ? 'opacity-100' : 'opacity-0 xl:opacity-100'} overflow-hidden`}>
           <div className={`p-2 ${
             theme === "dark" ? "code-block" : "bg-white border border-gray-200"
           }`}>

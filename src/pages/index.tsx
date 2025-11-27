@@ -7,7 +7,8 @@ import {
   Briefcase, 
   GraduationCap,
   Terminal,
-  Cpu
+  Cpu,
+  Trophy
 } from "lucide-react";
 
 import { Button } from "~/components/ui/button";
@@ -68,30 +69,43 @@ export default function Home() {
         "Conducted market research to align the platform with industry trends and user needs"
       ],
     },
-    {
-      title: "Co-Founder, Lead Programmer",
-      company: "EduBank.AI",
-      period: "Februrary 2025 - Present",
-      description: "Traditional study materials often limit AI-driven assistance, making it challenging for educators to maximize their resources. That's where EduBank.AI comes in!",
-      achievements: [
-        "Developing a platform where teachers can upload lecture notes in any format —PDFs, videos, images, and more.",
-        "Creating an AI system that processes the content and enables interactive learning.",
-        "Implementing features like question generation, unique example variations, and lecture assistance—all strictly based on the teacher's provided materials."
-      ],
-    },
-    {
-      title: "Co-Founder, Lead Programmer",
-      company: "ModelVision",
-      period: "September 2024 - October 2024",
-      description: "The absence of three-dimensional visual representations in educational books limits student engagement and hinders learning. That's where we come into play! ModelVision brings a new and innovative approach to learning. We bring textbooks to life.",
-      achievements: [
-        "Engineered an app enabling image capture and 3D AR model displays",
-        "Collaborated with team members to bring augmented reality applications to classrooms."
-      ],
-    },
   ];
 
+  const hackathons = [
+    {
+      hackathon: "Startup Sprint 2024",
+      project: "ModelVision",
+      prize: "Top 5 Runner Up",
+      link: "https://devpost.com/software/modelvision",
+      techs: ["Unity", "Vuforia SDK", "Blender", "Google Cloud AI"],
+      achievements: [
+        "Built an interactive AR education platform, converting textbook diagrams into immersive 3D models by utilising the AR functionality of Vuforia SDK.",
+        "Enhanced student engagement by enabling real-time exploration of complex concepts, through integration of an AI assistant for contextual responses",
+        "Improved platform scalability by designing a modular system architecture for easy addition of new features"
+      ],
+    },
+    {
+      hackathon: "VT Hacks 13",
+      project: "Terra Scope",
+      prize: "",
+      link: "https://devpost.com/software/terra-scope",
+      techs: ["Next.js", "React 19", "TypeScript", "Mapbox GL JS", "Tailwind CSS", "Radix UI", "Python"],
+      achievements: [
+        "Developed a geospatial platform to identify urban heat-island hotspots ,using interactive mapping dashboards and predictive visualizations.",
+        "Reduced analysis time by 50%, enabling faster insights for urban planning decisions through efficient dashboard design.",
+        "Prioritized interventions with predictive visualizations, simulating potential temperature reductions in targeted areas."
+      ],
+    },
+  ]
+
   const projects = [
+
+    {
+      title: "EduBank.AI",
+      description: "A platform where teachers upload any lecture materials, and an AI turns them into interactive learning with questions, examples, and guided assistance.",
+      tech: ["GoLang", "Next.js", "TailwindCSS", "T3 Stack", "ShadCN", "Gemini API"],
+      link: "https://github.com/EduBank-AI",
+    },
     {
       title: "AI vs Human Flappy Bird",
       description: "A Python-based Flappy Bird clone with AI training via neat -python, real-time Human vs AI gameplay, score tracking, and dynamic difficulty using pygame.",
@@ -116,18 +130,6 @@ export default function Home() {
       tech: ["Unity3D"],
       link: "http://ladev.itch.io/dodge-till-infinity",
     },
-    {
-      title: "Motion Detection",
-      description: "A security application that uses a camera to detect movement and triggers an alarm when motion is detected.",
-      tech: ["Python", "OpenCV"],
-      link: "https://github.com/lakshya7900/Motion-Detection",
-    },
-    {
-      title: "Hand Gesture Recognition",
-      description: "Recognizes hand gestures (thumbs up, down, OK sign, etc) and interprets them to provide real-time feedback.",
-      tech: ["Python", "OpenCV"],
-      link: "https://github.com/lakshya7900/Hand-Gesture-Recognition",
-    }
   ];
 
   return (
@@ -220,9 +222,6 @@ export default function Home() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="mb-4 text-gray-300">
-                        {exp.description}
-                      </p>
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start">
@@ -240,8 +239,67 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Hackathon Section */}
+      <section className="relative z-10 border-t border-gray-800 bg-gray-900 py-20">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-5xl">
+            <FadeIn>
+              <div className="mb-12 text-center">
+                <Trophy className="mx-auto mb-4 h-12 w-12 text-blue-400" />
+                <h2 className="text-3xl font-bold text-white sm:text-4xl">Hackathons</h2>
+              </div>
+            </FadeIn>
+            <StaggerContainer className="space-y-6">
+              {hackathons.map((hack, index) => (
+                <StaggerItem key={index}>
+                  <Card className="transition-all duration-300 hover:scale-[1.02] hover:shadow-lg border border-gray-700">
+                    <CardHeader>
+                      <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+                        <div>
+                          <CardTitle className="text-xl text-white">
+                            <a className="flex items-center gap-2" href={hack.link} target="_blank" rel="noopener noreferrer">
+                              <span className="align-middle">{hack.hackathon}</span>
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </CardTitle>
+                          <CardDescription className="mt-1 text-base text-gray-300">
+                            {hack.project}
+                          </CardDescription>
+                        </div>
+                        {hack.prize ? (
+                          <Badge variant="outline" className="w-fit text-white border-green-600 bg-green-600">
+                            {hack.prize}
+                          </Badge>
+                        ) : null}
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-2">
+                        {hack.techs.map((tech) => (
+                          <Badge key={tech} variant="secondary" className="transition-colors hover:bg-blue-600 hover:text-white text-white bg-gray-800">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                      <ul className="space-y-2 mt-4">
+                        {hack.achievements.map((achievement, i) => (
+                          <li key={i} className="flex items-start">
+                            <span className="mr-2 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-400" />
+                            <span className="text-sm text-white">{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </div>
+      </section>
+
       {/* Skills Section */}
-      <section className="relative z-10 py-20 bg-gray-900">
+      <section className="relative z-10 py-20 bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
             <FadeIn>
@@ -258,7 +316,7 @@ export default function Home() {
                     <CardContent>
                       <div className="flex flex-wrap gap-2">
                         {category.items.map((skill) => (
-                          <Badge key={skill} variant="secondary" className="transition-colors hover:bg-blue-600 hover:text-white text-white bg-gray-800">
+                          <Badge key={skill} variant="secondary" className="transition-colors hover:bg-blue-600 hover:text-white text-white bg-gray-900">
                             {skill}
                           </Badge>
                         ))}
@@ -273,7 +331,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="relative z-10 border-t border-gray-800 bg-gray-800 py-20">
+      <section id="projects" className="relative z-10 border-t border-gray-800 bg-gray-900 py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
             <FadeIn>
@@ -295,7 +353,7 @@ export default function Home() {
                       </p>
                       <div className="mb-4 flex flex-wrap gap-2">
                         {project.tech.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="text-xs transition-colors hover:bg-blue-600 hover:text-white text-white bg-gray-900">
+                          <Badge key={tech} variant="secondary" className="text-xs transition-colors hover:bg-blue-600 hover:text-white text-white bg-gray-800">
                             {tech}
                           </Badge>
                         ))}
@@ -316,7 +374,7 @@ export default function Home() {
       </section>
 
       {/* Terminal View Section */}
-      <section className="relative z-10 border-t border-gray-800 bg-gray-900 py-20">
+      <section className="relative z-10 border-t border-gray-800 bg-gray-800 py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
             <FadeIn>
@@ -362,7 +420,7 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section className="relative z-10 py-20 bg-gray-800">
+      <section className="relative z-10 py-20 bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
             <FadeIn>
@@ -400,7 +458,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="relative z-10 border-t border-gray-800 bg-gray-900 py-20">
+      <section className="relative z-10 border-t border-gray-800 bg-gray-800 py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
             <FadeIn>
@@ -413,7 +471,7 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={0.15}>
               <div className="flex flex-wrap items-center justify-center gap-4">
-                <Button asChild size="lg" className="transition-transform hover:scale-105 text-white" onClick={() => { window.open("mailto:aglakshya06@gmail.com", "_blank"); }}>
+                <Button asChild size="lg" className=" transition-transform hover:scale-105 text-white" onClick={() => { window.open("mailto:aglakshya06@gmail.com", "_blank"); }}>
                   <Mail className="mr-2 h-5 w-5" />
                   Email Me
                 </Button>

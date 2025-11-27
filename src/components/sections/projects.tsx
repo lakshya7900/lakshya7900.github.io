@@ -19,6 +19,23 @@ interface Project {
 const projects: Project[] = [
   {
     id: "1",
+    name: "EduBank.AI",
+    description: "AI-driven platform that converts teacher-uploaded lecture materials into interactive learning content.",
+    longDescription: "A multi-format lecture processing platform where teachers can upload PDFs, videos, images, handwritten notes, and other materials. The system uses AI to extract content, generate questions, create example variations, and provide lecture-guided assistance—all strictly grounded in the instructor’s provided content. Designed for seamless integration into classrooms, it offers a structured, interactive, and personalized learning experience powered by locally hosted models and a web-based interface.",
+    technologies: ["GoLang", "Next.js", "TailwindCSS", "T3 Stack", "ShadCN", "Gemini API", "UniPDF"],
+    status: "in-progress",
+    githubUrl: "https://github.com/EduBank-AI",
+    features: [
+      "Uploads and processes lectures in any format including PDFs, videos, images, and handwritten notes",
+      "AI-generated questions and answer variants based strictly on provided materials",
+      "Automatic extraction of LaTeX, text, and handwritten content using OCR and APIs",
+      "Interactive learning tools such as guided explanations and example variations",
+      "Local model hosting with a Go backend and web-based UI for cross-platform access",
+      "Designed for classroom workflows with structured, instructor-controlled content"
+    ]
+  },
+  {
+    id: "2",
     name: "Personal Virtual Assistant",
     description: "Voice-controlled task automation using Python and SpeechRecognition API",
     longDescription: "A desktop-based voice-activated assistant built in Python that can execute everyday tasks such as opening applications, managing files, sending messages, and performing searches. I designed it with modular architecture and integrated APIs for speech recognition and task automation. The project focuses on enhancing productivity through natural language interaction and real-time command execution.",
@@ -34,39 +51,7 @@ const projects: Project[] = [
     ]
   },
   {
-    id: "2",
-    name: "Motion Detection",
-    description: "Real-time motion tracking using OpenCV and Python",
-    longDescription: "A Python-based security application that uses computer vision to detect movement through a webcam feed. When motion is detected, it triggers an alarm and records evidence. I used OpenCV to process frames in real-time and implemented efficient algorithms to minimize false positives, making it suitable for basic home or office security setups.",
-    technologies: ["Python", "OpenCV", "numpy", "datetime", "threading", "cv2"],
-    status: "completed",
-    githubUrl: "https://github.com/lakshya7900/Motion-Detection",
-    features: [
-      "Real-time motion tracking using OpenCV and Python",
-      "Triggers alarms and captures video upon motion detection",
-      "Optimized frame analysis to minimize false positives",
-      "Adjustable sensitivity levels for custom environments",
-      "Lightweight design for continuous operation on standard hardware"
-    ]
-  },
-  {
     id: "3",
-    name: "Hand Gesture Recognition",
-    description: "Detects and classifies hand gestures in real time using computer vision",
-    longDescription: "An interactive computer vision project that identifies and interprets hand gestures like thumbs up, thumbs down, and the OK sign in real time. Using Python and OpenCV, I trained the system to recognize gestures and provide instant on-screen feedback. It demonstrates how human-computer interaction can be made intuitive without traditional input devices.",
-    technologies: ["Python", "OpenCV", "MediaPipe", "numpy", "cv2", "machine learning"],
-    status: "completed",
-    githubUrl: "https://github.com/lakshya7900/Hand-Gesture-Recognition",
-    features: [
-      "Detects and classifies hand gestures (thumbs up, OK, etc.) in real time",
-      "Uses OpenCV and Python for computer vision processing",
-      "Provides visual and text-based feedback instantly",
-      "Trained for high accuracy across varying lighting conditions",
-      "Demonstrates gesture-based human-computer interaction"
-    ]
-  },
-  {
-    id: "4",
     name: "Dodge Till Infinity",
     description: "2D arcade survival gameplay with endless, dynamic obstacle spawning",
     longDescription: "A fast-paced 2D survival game built in Unity using C#. Players dodge endless waves of obstacles while the game dynamically adjusts difficulty. I developed core mechanics, physics-based collision handling, and smooth UI transitions to deliver an addictive gameplay experience with increasing challenges and replay value.",
@@ -82,7 +67,7 @@ const projects: Project[] = [
     ]
   },
   {
-    id: "5",
+    id: "4",
     name: "Wordle Clone",
     description: "Full-featured iOS Wordle game built with Swift and SwiftUI",
     longDescription: "An iOS adaptation of the viral game Wordle, developed using Swift and SwiftUI. It includes daily challenges, progress tracking, dark mode, and smooth animations. I focused on delivering an elegant, native iOS experience with responsive design and local data persistence for user stats.",
@@ -98,7 +83,7 @@ const projects: Project[] = [
     ]
   },
   {
-    id: "6",
+    id: "5",
     name: "AI vs Human Flappy Bird",
     description: "Flappy Bird clone where AI agents compete against human players",
     longDescription: "A Python-based remake of the classic Flappy Bird game where human players compete against an AI trained using the NEAT algorithm. I implemented the machine learning logic to evolve AI agents over multiple generations, enabling them to adapt and outperform human players. The project highlights the fundamentals of neuroevolution and game-based reinforcement learning.",
@@ -111,6 +96,38 @@ const projects: Project[] = [
       "Real-time gameplay and adaptive difficulty balancing",
       "Visual indicators for AI evolution progress and fitness",
       "Demonstrates reinforcement learning in a fun, interactive way"
+    ]
+  },
+  {
+    id: "6",
+    name: "Motion Detection",
+    description: "Real-time motion tracking using OpenCV and Python",
+    longDescription: "A Python-based security application that uses computer vision to detect movement through a webcam feed. When motion is detected, it triggers an alarm and records evidence. I used OpenCV to process frames in real-time and implemented efficient algorithms to minimize false positives, making it suitable for basic home or office security setups.",
+    technologies: ["Python", "OpenCV", "numpy", "datetime", "threading", "cv2"],
+    status: "completed",
+    githubUrl: "https://github.com/lakshya7900/Motion-Detection",
+    features: [
+      "Real-time motion tracking using OpenCV and Python",
+      "Triggers alarms and captures video upon motion detection",
+      "Optimized frame analysis to minimize false positives",
+      "Adjustable sensitivity levels for custom environments",
+      "Lightweight design for continuous operation on standard hardware"
+    ]
+  },
+  {
+    id: "7",
+    name: "Hand Gesture Recognition",
+    description: "Detects and classifies hand gestures in real time using computer vision",
+    longDescription: "An interactive computer vision project that identifies and interprets hand gestures like thumbs up, thumbs down, and the OK sign in real time. Using Python and OpenCV, I trained the system to recognize gestures and provide instant on-screen feedback. It demonstrates how human-computer interaction can be made intuitive without traditional input devices.",
+    technologies: ["Python", "OpenCV", "MediaPipe", "numpy", "cv2", "machine learning"],
+    status: "completed",
+    githubUrl: "https://github.com/lakshya7900/Hand-Gesture-Recognition",
+    features: [
+      "Detects and classifies hand gestures (thumbs up, OK, etc.) in real time",
+      "Uses OpenCV and Python for computer vision processing",
+      "Provides visual and text-based feedback instantly",
+      "Trained for high accuracy across varying lighting conditions",
+      "Demonstrates gesture-based human-computer interaction"
     ]
   }
 ];
