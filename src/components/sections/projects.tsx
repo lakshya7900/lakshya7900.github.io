@@ -36,6 +36,22 @@ const projects: Project[] = [
   },
   {
     id: "2",
+    name: "Retro TV India",
+    description: "A platform where users explore curated classic Indian TV shows and cartoons with organized playlists and easy browsing.",
+    longDescription: "RetroTVIndia is a web platform dedicated to preserving and showcasing classic Indian TV shows and cartoons. Users can browse curated playlists, watch nostalgic content directly from YouTube, and enjoy a responsive and user-friendly interface. The project emphasizes ease of navigation, organized content management, and a nostalgic viewing experience, combining modern frontend technologies with backend APIs for seamless video integration.",
+    technologies: ["React", "TailwindCSS", "Node.js", "Go", "YouTube API", "JSON"],
+    status: "in-progress",
+    githubUrl: "https://github.com/RetroTVIndia",
+    features: [
+        "Curated playlists of classic Indian TV shows and cartoons",
+        "Seamless video integration using YouTube APIs",
+        "Responsive, modern, and user-friendly frontend",
+        "Organized content management via JSON files",
+        "Supports nostalgic browsing experience across devices"
+    ]
+  },
+  {
+    id: "3",
     name: "Personal Virtual Assistant",
     description: "Voice-controlled task automation using Python and SpeechRecognition API",
     longDescription: "A desktop-based voice-activated assistant built in Python that can execute everyday tasks such as opening applications, managing files, sending messages, and performing searches. I designed it with modular architecture and integrated APIs for speech recognition and task automation. The project focuses on enhancing productivity through natural language interaction and real-time command execution.",
@@ -51,7 +67,7 @@ const projects: Project[] = [
     ]
   },
   {
-    id: "3",
+    id: "4",
     name: "Dodge Till Infinity",
     description: "2D arcade survival gameplay with endless, dynamic obstacle spawning",
     longDescription: "A fast-paced 2D survival game built in Unity using C#. Players dodge endless waves of obstacles while the game dynamically adjusts difficulty. I developed core mechanics, physics-based collision handling, and smooth UI transitions to deliver an addictive gameplay experience with increasing challenges and replay value.",
@@ -67,7 +83,7 @@ const projects: Project[] = [
     ]
   },
   {
-    id: "4",
+    id: "5",
     name: "Wordle Clone",
     description: "Full-featured iOS Wordle game built with Swift and SwiftUI",
     longDescription: "An iOS adaptation of the viral game Wordle, developed using Swift and SwiftUI. It includes daily challenges, progress tracking, dark mode, and smooth animations. I focused on delivering an elegant, native iOS experience with responsive design and local data persistence for user stats.",
@@ -83,7 +99,7 @@ const projects: Project[] = [
     ]
   },
   {
-    id: "5",
+    id: "6",
     name: "AI vs Human Flappy Bird",
     description: "Flappy Bird clone where AI agents compete against human players",
     longDescription: "A Python-based remake of the classic Flappy Bird game where human players compete against an AI trained using the NEAT algorithm. I implemented the machine learning logic to evolve AI agents over multiple generations, enabling them to adapt and outperform human players. The project highlights the fundamentals of neuroevolution and game-based reinforcement learning.",
@@ -99,7 +115,7 @@ const projects: Project[] = [
     ]
   },
   {
-    id: "6",
+    id: "7",
     name: "Motion Detection",
     description: "Real-time motion tracking using OpenCV and Python",
     longDescription: "A Python-based security application that uses computer vision to detect movement through a webcam feed. When motion is detected, it triggers an alarm and records evidence. I used OpenCV to process frames in real-time and implemented efficient algorithms to minimize false positives, making it suitable for basic home or office security setups.",
@@ -115,7 +131,7 @@ const projects: Project[] = [
     ]
   },
   {
-    id: "7",
+    id: "8",
     name: "Hand Gesture Recognition",
     description: "Detects and classifies hand gestures in real time using computer vision",
     longDescription: "An interactive computer vision project that identifies and interprets hand gestures like thumbs up, thumbs down, and the OK sign in real time. Using Python and OpenCV, I trained the system to recognize gestures and provide instant on-screen feedback. It demonstrates how human-computer interaction can be made intuitive without traditional input devices.",
@@ -218,7 +234,7 @@ export function ProjectsSection({ theme = "dark" }: ProjectsSectionProps) {
                 ? "bg-gray-900/50 border-green-400/30" 
                 : "bg-white border-green-600/30"
             }`}>
-            <div className="space-y-2 sm:space-y-3 ">
+            <div className={`space-y-2 sm:space-y-3 h-[700px] overflow-y-scroll ${theme === "dark" ? "scrollbar-dark" : "scrollbar-light"}`}>
               {filteredProjects.length === 0 ? (
                 <div className={`text-center py-10 font-mono text-sm ${
                   theme === "dark" ? "text-green-400" : "text-green-600"
@@ -253,11 +269,11 @@ export function ProjectsSection({ theme = "dark" }: ProjectsSectionProps) {
                     </Badge>
                   </div>
 
-                  <p className={`text-xs sm:text-sm font-mono mb-2 sm:mb-3 break-words text-wrap ${ theme === "dark" ? "text-gray-300" : "text-gray-500" }`}>
+                  <p className={`text-xs sm:text-sm w-full text-left font-mono mb-2 sm:mb-3 break-words text-wrap ${ theme === "dark" ? "text-gray-300" : "text-gray-500" }`}>
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-1 text-wrap">
+                  <div className="flex flex-wrap gap-1 text-wrap w-full">
                     {project.technologies.slice(0, 3).map((tech) => (
                       <Badge
                         key={tech}

@@ -107,6 +107,12 @@ export default function Home() {
       link: "https://github.com/EduBank-AI",
     },
     {
+      title: "Retros TV Indian",
+      description: "A platform where users explore curated classic Indian TV shows and cartoons, with organized playlists, easy browsing, and a nostalgic viewing experience.",
+      tech: ["React", "TailwindCSS", "Node.js", "Go", "YouTube API", "JSON"],
+      link: "https://github.com/RetroTVIndia",
+    },
+    {
       title: "AI vs Human Flappy Bird",
       description: "A Python-based Flappy Bird clone with AI training via neat -python, real-time Human vs AI gameplay, score tracking, and dynamic difficulty using pygame.",
       tech: ["Python", "Neat-Python", "Pygame"],
