@@ -376,7 +376,7 @@ function TerminalPageContent() {
         setTerminalHistory(prev => [
           ...prev,
           "Portfolio Terminal Information:",
-          "  Developer: Portfolio Owner",
+          "  Developer: Lakshya Agarwal",
           "  Framework: Next.js 14",
           "  Language: TypeScript",
           "  Styling: Tailwind CSS",
