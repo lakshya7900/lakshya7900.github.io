@@ -105,6 +105,11 @@ export default function Home() {
       description: "A platform where teachers upload any lecture materials, and an AI turns them into interactive learning with questions, examples, and guided assistance.",
       tech: ["GoLang", "Next.js", "TailwindCSS", "T3 Stack", "ShadCN", "Gemini API"],
       link: "https://github.com/EduBank-AI",
+    },{
+      title: "Forge",
+      description: "A macOS app for developers that uses AI to turn rough ideas into structured project plans, breaking them into clear tools to use, tasks, timelines, and next steps.",
+      tech: ["Swift", "SwiftUI", "GoLang", "Apple Foundation Model"],
+      link: "https://github.com/lakshya7900/Forge",
     },
     {
       title: "Retros TV Indian",
@@ -117,12 +122,6 @@ export default function Home() {
       description: "A Python-based Flappy Bird clone with AI training via neat -python, real-time Human vs AI gameplay, score tracking, and dynamic difficulty using pygame.",
       tech: ["Python", "Neat-Python", "Pygame"],
       link: "https://github.com/lakshya7900/AI-vs-Human-Flappy-Bird",
-    },
-    {
-      title: "Wordle Clone",
-      description: "A Swift and SwiftUI-based Wordle clone with daily challenges, real-time feedback, progress tracking, and dark mode support for iOS and iPadOS.",
-      tech: ["Swift", "SwiftUI"],
-      link: "https://github.com/lakshya7900/Wordle-Clone",
     },
     {
       title: "Personal Virtual Assistant",
