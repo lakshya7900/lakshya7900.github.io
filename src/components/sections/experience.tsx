@@ -19,6 +19,20 @@ interface Experience {
 const experiences: Experience[] = [
   {
     id: "1",
+    company: "Virginia Tech IDPro",
+    position: "Software Developer",
+    duration: "June 2026 - Present",
+    location: "Blacksburg, Virginia",
+    description: "Developing an AI-powered tour guide for Meta Ray-Ban smart glasses that identifies paintings, artifacts, and landmarks in real time and delivers concise descriptions and interesting facts through bone-conduction audio in a fully hands-free experience. Fine-tuning a Moondream vision-language model on curated museum and cultural heritage datasets to generate context-aware, concise descriptions from live camera frames with low-latency inference. Building a conversational follow-up system using Meta’s Android SDK to enable natural language Q&A about visual inputs with real-time spoken responses.",
+    technologies: ["Moondream Vision-Language Model", "Meta SDK", "Python", "Kotlin", "PyTorch", "Machine Learning"],
+    achievements: [
+      "Fine-tuned a Moondream vision-language model on curated museum and cultural heritage datasets to generate concise, context-aware descriptions from real-world visual inputs",
+      "Built an AI-powered real-time tour guide system for smart glasses that identifies cultural artifacts and landmarks with contextual explanations",
+      "Developed a conversational follow-up system enabling natural language interaction and voice-based Q&A using Meta’s Android SDK with low-latency responses"
+    ]
+  },
+  {
+    id: "2",
     company: "SBM Group Siliguri",
     position: "Web Developer Intern",
     duration: "May 2025 - August 2025",

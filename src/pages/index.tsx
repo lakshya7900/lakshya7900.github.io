@@ -25,6 +25,7 @@ import { Badge } from "~/components/ui/badge";
 
 import { FadeIn } from "~/components/fade-in";
 import { StaggerContainer, StaggerItem } from "~/components/stagger-container";
+import { title } from "process";
 
 export default function Home() {
   const skills = [
@@ -59,6 +60,16 @@ export default function Home() {
   ];
 
   const experiences = [
+    {
+      title: "Software Developer",
+      company: "Virginia Tech IDPro, Blacksburg",
+      period: "June 2026 - Present",
+      achievements: [
+        "Developing an AI-powered tour guide for Meta Ray-Ban smart glasses that identifies paintings, artifacts, and landmarks in real time, delivering concise descriptions and interesting facts through bone-conduction audio — all hands- free.",
+        "Fine-tuning a Gemini vision-language model on curated museum and cultural heritage datasets to generate short, contextually rich descriptions from live camera frames, achieving ~2–4 second response latency per interaction.",
+        "Building a conversational follow-up system using Meta's Android SDK, allowing users to ask natural language questions about what they're looking at and receive spoken responses without touching their device."
+      ]
+    },
     {
       title: "Intern, Web Developer",
       company: "SBM Group, Siliguri",
